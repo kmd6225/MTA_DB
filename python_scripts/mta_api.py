@@ -12,7 +12,8 @@ def query_mta(fdate):
     rjson = response.json()
     try:
         df = pd.DataFrame(rjson)
-        df.to_csv('C:\Users\kduba\OneDrive\Documents\MTA_DB\text_files\mta_{}.csv'.format(fdate))
+        path_str = 'C:\Users\kduba\OneDrive\Documents\MTA_DB\text_files\mta_{}.csv'.format(fdate)
+        df.to_csv(path_str)
         return('success')
     except:
         return('failure')
